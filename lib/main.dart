@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:weather_icons/weather_icons.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
@@ -90,25 +89,20 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    Text(
-                      '$location,',
-                      style: new TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.w300),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      '$countryCode',
-                      style: new TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.w400),
+                RichText(
+                    text: TextSpan(
+                  text: "$location",
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black54),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "$countryCode",
+                      style: TextStyle(fontSize: 20, color: Colors.black38),
                     ),
                   ],
-                ),
+                )),
                 SizedBox(
                   height: 15,
                 ),
