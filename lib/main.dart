@@ -70,6 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _searchLocation(location);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
